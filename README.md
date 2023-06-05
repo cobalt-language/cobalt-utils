@@ -1,0 +1,2 @@
+# cobalt-utils
+This repository contains general utilities for [Cobalt](https://github.com/matt-cornell/cobalt-lang). Stuff here will mostly just be things that aren't complex enough to have their own repository, but are still useful.
