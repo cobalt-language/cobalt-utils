@@ -24,12 +24,10 @@ syn region cobaltString start="\"" end="\"" skip="\\\"" contains=cobaltEscape
 syn match cobaltChar "'[^\\']'" contains=cobaltEscape
 syn match cobaltChar "'\\[^xuU]'" contains=cobaltEscape
 syn match cobaltChar "'\\x\x\{2}'" contains=cobaltEscape
-syn match cobaltChar "'\\u\x\{4}'" contains=cobaltEscape
-syn match cobaltChar "'\\U\x\{8}'" contains=cobaltEscape
+syn match cobaltChar "'\\u{\x\{,6}}'" contains=cobaltEscape
 syn match cobaltEscape "\\[^xuU]" contained
 syn match cobaltEscape "\\x\x\{2}" contained
-syn match cobaltEscape "\\u\x\{4}" contained
-syn match cobaltEscape "\\U\x\{4}" contained
+syn match cobaltEscape "\\u{\x\{,6}}" contained
 
 syn match cobaltOperator "[-+*/&|^~:!?=<>]"
 
