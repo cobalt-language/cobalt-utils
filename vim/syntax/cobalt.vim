@@ -7,13 +7,13 @@ syn region cobaltMultiComment start="#===\(\n\|[^=]\)" end="===#" contains=cobal
 syn region cobaltMultiComment start="#====\(\n\|[^=]\)" end="====#" contains=cobaltMultiComment
 syn region cobaltMultiComment start="#=====" end="=====#" contains=cobaltMultiComment
 
-syn keyword cobaltDecl fn let module
-syn match   cobaltDecl "\(const\|mut\)\(\_s*[&*]\)\@!"
+syn keyword cobaltDecl fn let module const
+syn match   cobaltDecl "\([&*]\_s*\)\@<!mut"
 syn keyword cobaltKeyword if else while
 syn match cobaltMacro "\v\@(\w|$)+"
 syn region cobaltMacro start="\v\@(\w|$)+\(\ze(.|\n){-}\)(\_s\@(\w|$)+(\((.|\n){-}\))?)*\_s*(let|mut|const|type|fn|module)" end="\v(\@(\w|$)+\((.|\n){-})@<=\)\ze(\_s\@(\w|$)+(\((.|\n){-}\))?)*\_s*(let|mut|const|type|fn|module)"
 
-syn match cobaltType "\(const\|mut\)\_s*[&*]"
+syn match cobaltType "[&*]\_s\*mut"
 syn match cobaltType "\<[iu]\d\+\>"
 syn keyword cobaltType f16 f32 f64 f128 null
 
